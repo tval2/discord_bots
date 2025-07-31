@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Godpack Card Identifier</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎴 Godpack Card Identifier</h1>
+        <p>Select pack types you care about and test card identification</p>
+      </header>
+
+      <main>
+        <!-- Pack Type Selection -->
+        <section class="pack-selection">
+          <h2>📦 Pack Types</h2>
+          <div class="pack-grid">
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="genetic-apex" checked />
+                <span class="pack-name">Genetic Apex</span>
+                <span class="pack-code">A1</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="genetic-apex-premium" />
+                <span class="pack-name">Genetic Apex Premium</span>
+                <span class="pack-code">A1a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="space-time-smackdown" />
+                <span class="pack-name">Space-time Smackdown</span>
+                <span class="pack-code">A2</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="space-time-smackdown-premium" />
+                <span class="pack-name">Space-time Smackdown Premium</span>
+                <span class="pack-code">A2a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="shining-revelry" />
+                <span class="pack-name">Shining Revelry</span>
+                <span class="pack-code">A2b</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="shining-revelry-premium" />
+                <span class="pack-name">Shining Revelry Premium</span>
+                <span class="pack-code">A3a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="celestial-guardians" />
+                <span class="pack-name">Celestial Guardians</span>
+                <span class="pack-code">A3</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="celestial-guardians-premium" />
+                <span class="pack-name">Celestial Guardians Premium</span>
+                <span class="pack-code">A3b</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="eevee-grove" />
+                <span class="pack-name">Eevee Grove</span>
+                <span class="pack-code">A4</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="eevee-grove-premium" />
+                <span class="pack-name">Eevee Grove Premium</span>
+                <span class="pack-code">A4a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="mythical-island" />
+                <span class="pack-name">Mythical Island</span>
+                <span class="pack-code">A1a</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="mythical-island-premium" />
+                <span class="pack-name">Mythical Island Premium</span>
+                <span class="pack-code">A1a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="triumphant-light" />
+                <span class="pack-name">Triumphant Light</span>
+                <span class="pack-code">A2a</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="triumphant-light-premium" />
+                <span class="pack-name">Triumphant Light Premium</span>
+                <span class="pack-code">A2a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="extradimensional-crisis" />
+                <span class="pack-name">Extradimensional Crisis</span>
+                <span class="pack-code">A3a</span>
+              </label>
+              <label class="pack-option premium">
+                <input
+                  type="checkbox"
+                  value="extradimensional-crisis-premium"
+                />
+                <span class="pack-name">Extradimensional Crisis Premium</span>
+                <span class="pack-code">A3a</span>
+              </label>
+            </div>
+
+            <div class="pack-group">
+              <label class="pack-option">
+                <input type="checkbox" value="wisdom-of-sea-and-sky" />
+                <span class="pack-name">Wisdom of Sea and Sky</span>
+                <span class="pack-code">A4</span>
+              </label>
+              <label class="pack-option premium">
+                <input type="checkbox" value="wisdom-of-sea-and-sky-premium" />
+                <span class="pack-name">Wisdom of Sea and Sky Premium</span>
+                <span class="pack-code">A4</span>
+              </label>
+            </div>
+          </div>
+          <div class="pack-controls">
+            <button id="select-all" class="btn btn-secondary">
+              Select All
+            </button>
+            <button id="select-none" class="btn btn-secondary">
+              Select None
+            </button>
+          </div>
+        </section>
+
+        <!-- Rolling image boxes for joined/skipped packs -->
+        <section class="rolling-images">
+          <h2>Recently Joined Packs</h2>
+          <button id="clear-joined-images" class="clear-images-btn">
+            Clear Joined Images
+          </button>
+          <div id="joined-images" class="image-rolling-box"></div>
+          <h2>Recently Skipped Packs</h2>
+          <button id="clear-skipped-images" class="clear-images-btn">
+            Clear Skipped Images
+          </button>
+          <div id="skipped-images" class="image-rolling-box"></div>
+        </section>
+
+        <!-- Image Input -->
+        <section class="image-input">
+          <h2>🖼️ Godpack Image</h2>
+          <div class="input-group">
+            <label for="image-url">Image URL:</label>
+            <input
+              type="url"
+              id="image-url"
+              placeholder="https://cdn.discordapp.com/attachments/..."
+            />
+            <button id="load-image" class="btn btn-primary">Load Image</button>
+          </div>
+          <div class="input-group">
+            <label for="image-file">Or upload file:</label>
+            <input type="file" id="image-file" accept="image/*" />
+          </div>
+          <div id="image-preview" class="image-preview hidden">
+            <img id="preview-img" alt="Godpack preview" />
+          </div>
+        </section>
+
+        <!-- Identification Results -->
+        <section class="identification-results">
+          <h2>🔍 Identification Results</h2>
+          <button id="identify-cards" class="btn btn-primary" disabled>
+            Identify Cards
+          </button>
+
+          <div id="results" class="results hidden">
+            <div id="loading" class="loading hidden">
+              <div class="spinner"></div>
+              <p>Identifying cards...</p>
+            </div>
+
+            <div id="success-results" class="success-results hidden">
+              <h3>✅ Cards Identified</h3>
+              <div class="set-info">
+                <span class="set-name"></span>
+                <span class="set-code"></span>
+              </div>
+              <div id="cards-list" class="cards-list"></div>
+            </div>
+
+            <div id="error-results" class="error-results hidden">
+              <h3>❌ Identification Failed</h3>
+              <p id="error-message"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bot Control -->
+        <section class="bot-control">
+          <h2>🤖 Discord Bot Control</h2>
+          <div class="bot-status">
+            <div class="status-indicator">
+              <span class="status-dot" id="bot-status-dot"></span>
+              <span class="status-text" id="bot-status-text">Stopped</span>
+            </div>
+            <div class="bot-controls">
+              <button id="start-bot" class="btn btn-success">
+                Start Hunting
+              </button>
+              <button id="stop-bot" class="btn btn-danger" disabled>
+                Stop Bot
+              </button>
+            </div>
+          </div>
+
+          <div class="bot-info">
+            <div class="info-group">
+              <label>Active Filters:</label>
+              <div id="active-filters" class="filters-list">None</div>
+            </div>
+            <div class="info-group">
+              <label>Uptime:</label>
+              <span id="bot-uptime">--</span>
+            </div>
+          </div>
+
+          <div class="bot-logs">
+            <h3>📋 Bot Logs</h3>
+            <div id="bot-logs" class="logs-container">
+              <p class="no-logs">No logs yet. Start the bot to see activity.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration -->
+        <section class="configuration">
+          <h2>⚙️ Configuration</h2>
+          <div class="config-group">
+            <label for="server-url">Server URL:</label>
+            <input
+              type="url"
+              id="server-url"
+              value="http://localhost:3000"
+              placeholder="http://localhost:3000"
+            />
+          </div>
+          <div class="config-group">
+            <label>
+              <input type="checkbox" id="auto-identify" checked />
+              Auto-identify when image is loaded
+            </label>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

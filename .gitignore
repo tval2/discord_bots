@@ -1,0 +1,41 @@
+# Environment variables
+.env
+
+# Runtime generated files
+web_app/temp/
+temp_bot.js
+discord-user-data/
+
+# Dependencies
+web_app/node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+
+# Downloaded images
+*.png
+*.jpg
+*.jpeg
+*.webp
+images/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE files
+workspace.code-workspace
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Discord bot files
+discord-user-data/
+discord-session/
+discord-session.json
