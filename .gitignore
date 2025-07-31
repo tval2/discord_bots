@@ -16,13 +16,6 @@ __pycache__/
 .venv/
 venv/
 
-# Downloaded images
-*.png
-*.jpg
-*.jpeg
-*.webp
-images/
-
 # OS files
 .DS_Store
 Thumbs.db
@@ -39,3 +32,14 @@ workspace.code-workspace
 discord-user-data/
 discord-session/
 discord-session.json
+
+images/A4/
+images/A3/
+images/A2/
+images/A1/
+
+images/A1a/
+images/A2a/
+images/A3a/
+
+images/A2b/
